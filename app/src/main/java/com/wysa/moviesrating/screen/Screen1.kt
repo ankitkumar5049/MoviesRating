@@ -60,8 +60,11 @@ fun MovieListScreen(
     val languages: List<String> = listOf("English", "Hindi")
     val context = LocalContext.current
 
-    // Make the movie list a mutable state to trigger recomposition
     val movies = remember { mutableStateOf(initialMovies) }
+
+    val filteredMovies = remember(selectedLanguage, movies.value) {
+        movies.value.filter { it.language == selectedLanguage }
+    }
 
     Scaffold(
         topBar = {
@@ -97,7 +100,7 @@ fun MovieListScreen(
             contentPadding = padding,
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(movies.value) { movie ->
+            items(filteredMovies) { movie ->
                 MovieListItem(
                     movie = movie,
                     onFavoriteClick = {
@@ -173,6 +176,6 @@ fun MovieListItem(
 @Composable
 fun GreetingPreview() {
     MoviesRatingTheme {
-        MovieListScreen(initialMovies = listOf(Movie(10, "Titanic", "2024", "https://example.com/image.jpg", true)), onLanguageChange = {})
+        MovieListScreen(initialMovies = listOf(Movie(10, "Titanic", "2024", "https://example.com/image.jpg", true, "English")), onLanguageChange = {})
     }
 }

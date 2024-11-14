@@ -25,10 +25,27 @@ fun Navigation(){
 
 fun getHardcodedMovies(): List<Movie> {
     return listOf(
-        Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false),
-        Movie(2, "The Dark Knight", "2008", "https://image.tmdb.org/t/p/w500/qJr71P6T0MPXhIHffW4rYppqim5.jpg", false),
-        Movie(3, "Interstellar", "2014", "https://image.tmdb.org/t/p/w500/rIl4wPTTz80V3NcJeouBGqGxtv4.jpg", false),
-        Movie(4, "The Matrix", "1999", "https://image.tmdb.org/t/p/w500/vjj9uSvsw61g7OHObJ2jqTfoh51.jpg", false),
-        Movie(5, "Avatar", "2009", "https://image.tmdb.org/t/p/w500/8xeNxT2oGH0e2gQ9MmC0d5IBIYZ.jpg", false)
+        Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false, "English"),
+        Movie(2, "The Dark Knight", "2008", "https://image.tmdb.org/t/p/w500/qJr71P6T0MPXhIHffW4rYppqim5.jpg", false,"English"),
+        Movie(3, "Interstellar", "2014", "https://image.tmdb.org/t/p/w500/rIl4wPTTz80V3NcJeouBGqGxtv4.jpg", false,"English"),
+        Movie(4, "The Matrix", "1999", "https://image.tmdb.org/t/p/w500/vjj9uSvsw61g7OHObJ2jqTfoh51.jpg", false,"English"),
+        Movie(5, "Avatar", "2009", "https://image.tmdb.org/t/p/w500/8xeNxT2oGH0e2gQ9MmC0d5IBIYZ.jpg", false,"Hindi"),
+        Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false,"English"),
+        Movie(2, "The Dark Knight", "2008", "https://image.tmdb.org/t/p/w500/qJr71P6T0MPXhIHffW4rYppqim5.jpg", false,"English"),
+        Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false, "English"),
+        Movie(2, "The Dark Knight", "2008", "https://image.tmdb.org/t/p/w500/qJr71P6T0MPXhIHffW4rYppqim5.jpg", false,"English"),
+        Movie(3, "Interstellar", "2014", "https://image.tmdb.org/t/p/w500/rIl4wPTTz80V3NcJeouBGqGxtv4.jpg", false,"Hindi"),
+        Movie(4, "The Matrix", "1999", "https://image.tmdb.org/t/p/w500/vjj9uSvsw61g7OHObJ2jqTfoh51.jpg", false,"English"),
+        Movie(5, "Avatar", "2009", "https://image.tmdb.org/t/p/w500/8xeNxT2oGH0e2gQ9MmC0d5IBIYZ.jpg", false,"English"),
+        Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false,"English"),
+        Movie(2, "The Dark Knight", "2008", "https://image.tmdb.org/t/p/w500/qJr71P6T0MPXhIHffW4rYppqim5.jpg", false,"English"),
+        Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false, "Hindi"),
+        Movie(2, "The Dark Knight", "2008", "https://image.tmdb.org/t/p/w500/qJr71P6T0MPXhIHffW4rYppqim5.jpg", false,"English"),
+        Movie(3, "Interstellar", "2014", "https://image.tmdb.org/t/p/w500/rIl4wPTTz80V3NcJeouBGqGxtv4.jpg", false,"English"),
+        Movie(4, "The Matrix", "1999", "https://image.tmdb.org/t/p/w500/vjj9uSvsw61g7OHObJ2jqTfoh51.jpg", false,"English"),
+        Movie(5, "Avatar", "2009", "https://image.tmdb.org/t/p/w500/8xeNxT2oGH0e2gQ9MmC0d5IBIYZ.jpg", false,"English"),
+        Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false,"English"),
+        Movie(2, "The Dark Knight", "2008", "https://image.tmdb.org/t/p/w500/qJr71P6T0MPXhIHffW4rYppqim5.jpg", false,"English"),
+
     )
 }

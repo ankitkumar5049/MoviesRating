@@ -25,7 +25,7 @@ fun MovieDetailScreen(
     movieViewModel: MovieListViewModel = viewModel()
 ) {
 //    val movie = movieViewModel.movies.find { it.id == movieId }
-    val movie = Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false)
+    val movie = Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false,"Hindi")
 
     if (movie != null) {
         Column(modifier = Modifier.fillMaxSize()) {

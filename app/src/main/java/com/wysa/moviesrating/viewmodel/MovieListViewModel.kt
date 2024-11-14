@@ -18,16 +18,4 @@ class MovieListViewModel: ViewModel() {
     var loading: Boolean = false
         private set
 
-    fun fetchMovies(language: String="hindi", page: Int = 1) {
-        loading = true
-        viewModelScope.launch {
-            try {
-                val movies = movieRepository.getMovies()
-                Log.d("TAG", "fetchMovies: $movies")
-                loading = false
-            } catch (e: Exception) {
-                loading = false
-            }
-        }
-    }
 }
