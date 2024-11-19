@@ -42,16 +42,19 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberImagePainter
+import com.wysa.moviesrating.R
 import com.wysa.moviesrating.model.Movie
-import com.wysa.moviesrating.model.Screen
+import com.wysa.moviesrating.navigation.Screen
 import com.wysa.moviesrating.ui.theme.MoviesRatingTheme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MovieListScreen(
+    navController: NavHostController,
     initialMovies: List<Movie>,
     onLanguageChange: (String) -> Unit,
 ) {
@@ -71,7 +74,6 @@ fun MovieListScreen(
             TopAppBar(
                 title = { Text("Latest Movies") },
                 actions = {
-                    // Language Filter Dropdown
                     Box {
                         IconButton(onClick = { expanded = true }) {
                             Icon(Icons.Default.List, contentDescription = "Filter by Language")
@@ -111,7 +113,7 @@ fun MovieListScreen(
                         movies.value = updatedMovies
                     },
                     onClick = {
-                        Toast.makeText(context, "${movie.title} clicked", Toast.LENGTH_SHORT).show()
+                        navController.navigate(Screen.DetailScreen.createRoute(movie.id))
                     }
                 )
             }
@@ -137,7 +139,7 @@ fun MovieListItem(
         ) {
             // Backdrop Image
             Image(
-                painter = rememberImagePainter(data = movie.backdropUrl),
+                painter = rememberImagePainter(data = R.drawable.movie),
                 contentDescription = movie.title,
                 modifier = Modifier
                     .size(100.dp)
@@ -176,6 +178,6 @@ fun MovieListItem(
 @Composable
 fun GreetingPreview() {
     MoviesRatingTheme {
-        MovieListScreen(initialMovies = listOf(Movie(10, "Titanic", "2024", "https://example.com/image.jpg", true, "English")), onLanguageChange = {})
+        MovieListScreen(navController = rememberNavController(), initialMovies = listOf(Movie(10, "Titanic", "2024", "https://example.com/image.jpg", true, "English")), onLanguageChange = {})
     }
 }

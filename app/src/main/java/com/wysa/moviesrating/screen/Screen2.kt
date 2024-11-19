@@ -1,5 +1,6 @@
 package com.wysa.moviesrating.screen
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -11,27 +12,30 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
+import com.wysa.moviesrating.R
 import com.wysa.moviesrating.model.Movie
+import com.wysa.moviesrating.model.MovieData
 import com.wysa.moviesrating.ui.theme.MoviesRatingTheme
 import com.wysa.moviesrating.viewmodel.MovieListViewModel
 
 @Composable
 fun MovieDetailScreen(
-    movieId: Int = 0,
-    movieViewModel: MovieListViewModel = viewModel()
+    movieId: Int,
 ) {
 //    val movie = movieViewModel.movies.find { it.id == movieId }
-    val movie = Movie(1, "Inception", "2010", "https://image.tmdb.org/t/p/w500/8aRrV5Fic5dks8lPNEkC0OBKpt9.jpg", false,"Hindi")
+    val movie = MovieData.getHardcodedMovies().find { it.id == movieId }
 
     if (movie != null) {
-        Column(modifier = Modifier.fillMaxSize()) {
-            // Backdrop image
+        Column(modifier = Modifier.fillMaxSize()
+            ) {
+            Spacer(modifier = Modifier.height(40.dp))
             Image(
-                painter = rememberImagePainter(movie.backdropUrl),
+                painter = rememberImagePainter(R.drawable.movie),
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -63,6 +67,6 @@ fun MovieDetailScreen(
 @Composable
 fun MoviePreview() {
     MoviesRatingTheme {
-        MovieDetailScreen()
+        MovieDetailScreen(0)
     }
 }
